@@ -101,17 +101,35 @@ const ForgotPasswordPage = (props) => {
           { siteName: getConfig().SITE_NAME })}
         </title>
       </Helmet>
-      <div>
-        <Tabs activeKey="" id="controlled-tab" onSelect={(key) => navigate(updatePathWithQueryParams(key))}>
-          <Tab title={tabTitle} eventKey={LOGIN_PAGE} />
-        </Tabs>
+      <div className="logistration-panel">
+        <img
+          src="/assets/logo.webp"
+          alt="Logo"
+          className="d-block mx-auto mb-4"
+          style={{ width: '180px' }}
+        />
+        <h1 className='font-weight-normal text-uppercase text-center'>Campus</h1>
+        <ul className="nav justify-content-center logistration-tabs forgot-password-tabs">
+          <li className="nav-item">
+            <button
+              type="button"
+              className="nav-link d-flex align-items-center"
+              onClick={() => navigate(updatePathWithQueryParams(LOGIN_PAGE))}
+            >
+              <div className="d-inline-flex flex-wrap align-items-center">
+                <Icon src={ChevronLeft} />
+                <span className="ml-2">{formatMessage(messages['sign.in.text'])}</span>
+              </div>
+            </button>
+          </li>
+        </ul>
         <div id="main-content" className="main-content">
-          <Form id="forget-password-form" name="forget-password-form" className="mw-xs">
+          <Form id="forget-password-form" name="forget-password-form" className="mw-xs mx-auto">
             <ForgotPasswordAlert email={bannerEmail} emailError={formErrors} status={status} />
-            <h2 className="h4">
+            <h2 className="h4 text-center">
               {formatMessage(messages['forgot.password.page.heading'])}
             </h2>
-            <p className="mb-4">
+            <p className="mb-5 text-center small" style={{ opacity: 0.8 }}>
               {formatMessage(messages['forgot.password.page.instructions'])}
             </p>
             <FormGroup
@@ -125,33 +143,35 @@ const ForgotPasswordPage = (props) => {
               handleFocus={handleFocus}
               helpText={[formatMessage(messages['forgot.password.email.help.text'], { platformName })]}
             />
-            <StatefulButton
-              id="submit-forget-password"
-              name="submit-forget-password"
-              type="submit"
-              variant="brand"
-              className="forgot-password--button"
-              state={submitState}
-              labels={{
-                default: formatMessage(messages['forgot.password.page.submit.button']),
-                pending: '',
-              }}
-              onClick={handleSubmit}
-              onMouseDown={(e) => e.preventDefault()}
-            />
-            {(getConfig().LOGIN_ISSUE_SUPPORT_LINK) && (
-              <Hyperlink
-                id="forgot-password"
-                name="forgot-password"
-                className="ml-4 font-weight-500 text-body"
-                destination={getConfig().LOGIN_ISSUE_SUPPORT_LINK}
-                target="_blank"
-                showLaunchIcon={false}
-              >
-                {formatMessage(messages['need.help.sign.in.text'])}
-              </Hyperlink>
-            )}
-            <p className="mt-5.5 small text-gray-700">
+            <div className='login-actions'>
+              <StatefulButton
+                id="submit-forget-password"
+                name="submit-forget-password"
+                type="submit"
+                variant="brand"
+                className="forgot-password--button btn-custom transparent-orange w-100"
+                state={submitState}
+                labels={{
+                  default: formatMessage(messages['forgot.password.page.submit.button']),
+                  pending: '',
+                }}
+                onClick={handleSubmit}
+                onMouseDown={(e) => e.preventDefault()}
+              />
+              {(getConfig().LOGIN_ISSUE_SUPPORT_LINK) && (
+                <Hyperlink
+                  id="forgot-password"
+                  name="forgot-password"
+                  className="ml-4 font-weight-500 text-body forgot-password-link mt-2"
+                  destination={getConfig().LOGIN_ISSUE_SUPPORT_LINK}
+                  target="_blank"
+                  showLaunchIcon={false}
+                >
+                  {formatMessage(messages['need.help.sign.in.text'])}
+                </Hyperlink>
+              )}
+            </div>
+            <p className="mt-5.5 x-small text-gray-700 text-center">
               {formatMessage(messages['additional.help.text'], { platformName })}
               <span>
                 <Hyperlink isInline destination={`mailto:${getConfig().INFO_EMAIL}`}>{getConfig().INFO_EMAIL}</Hyperlink>

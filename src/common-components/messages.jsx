@@ -4,133 +4,133 @@ const messages = defineMessages({
   // institution login strings
   'institution.login.page.sub.heading': {
     id: 'institution.login.page.sub.heading',
-    defaultMessage: 'Choose your institution from the list below',
-    description: 'Heading of the institutions list',
+    defaultMessage: 'Elige tu institución de la lista a continuación',
+    description: 'Encabezado de la lista de instituciones',
   },
   // logistration strings
   'logistration.sign.in': {
     id: 'logistration.sign.in',
-    defaultMessage: 'Sign in',
-    description: 'Text that appears on the tab to switch between login and register',
+    defaultMessage: 'Iniciar sesión',
+    description: 'Texto que aparece en la pestaña para cambiar entre iniciar sesión y registrarse',
   },
   'logistration.register': {
     id: 'logistration.register',
-    defaultMessage: 'Register',
-    description: 'Text that appears on the tab to switch between login and register',
+    defaultMessage: 'Registrarse',
+    description: 'Texto que aparece en la pestaña para cambiar entre iniciar sesión y registrarse',
   },
   // enterprise sso strings
   'enterprisetpa.title.heading': {
     id: 'enterprisetpa.title.heading',
-    defaultMessage: 'Would you like to sign in using your {providerName} credentials?',
-    description: 'Header text used in enterprise third party authentication',
+    defaultMessage: '¿Te gustaría iniciar sesión usando tus credenciales de {providerName}?',
+    description: 'Texto de encabezado usado en autenticación de terceros empresarial',
   },
   'enterprisetpa.login.button.text': {
     id: 'enterprisetpa.login.button.text',
-    defaultMessage: 'Show me other ways to sign in or register',
-    description: 'Button text for login',
+    defaultMessage: 'Mostrarme otras formas de iniciar sesión o registrarse',
+    description: 'Texto del botón para iniciar sesión',
   },
   'enterprisetpa.login.button.text.public.account.creation.disabled': {
     id: 'enterprisetpa.login.button.text.public.account.creation.disabled',
-    defaultMessage: 'Show me other ways to sign in',
-    description: 'Button text for login when account creation is disabled',
+    defaultMessage: 'Mostrarme otras formas de iniciar sesión',
+    description: 'Texto del botón para iniciar sesión cuando la creación de cuentas está deshabilitada',
   },
   // social auth providers
   'sso.sign.in.with': {
     id: 'sso.sign.in.with',
-    defaultMessage: 'Sign in with {providerName}',
-    description: 'Screen reader text that appears before social auth provider name',
+    defaultMessage: 'Iniciar sesión con {providerName}',
+    description: 'Texto para lector de pantalla que aparece antes del nombre del proveedor de autenticación social',
   },
   'sso.create.account.using': {
     id: 'sso.create.account.using',
-    defaultMessage: 'Create account using {providerName}',
-    description: 'Screen reader text that appears before social auth provider name',
+    defaultMessage: 'Crear cuenta usando {providerName}',
+    description: 'Texto para lector de pantalla que aparece antes del nombre del proveedor de autenticación social',
   },
   // password field strings
   'show.password': {
     id: 'show.password',
-    defaultMessage: 'Show password',
-    description: 'aria label for show password icon on password field',
+    defaultMessage: 'Mostrar contraseña',
+    description: 'etiqueta aria para el icono de mostrar contraseña en el campo de contraseña',
   },
   'hide.password': {
     id: 'hide.password',
-    defaultMessage: 'Hide password',
-    description: 'aria label for hide password icon on password field',
+    defaultMessage: 'Ocultar contraseña',
+    description: 'etiqueta aria para el icono de ocultar contraseña en el campo de contraseña',
   },
   'one.letter': {
     id: 'one.letter',
-    defaultMessage: '1 letter',
-    description: 'password requirement to have 1 letter',
+    defaultMessage: '1 letra',
+    description: 'requisito de contraseña de tener 1 letra',
   },
   'one.number': {
     id: 'one.number',
-    defaultMessage: '1 number',
-    description: 'password requirement to have 1 number',
+    defaultMessage: '1 número',
+    description: 'requisito de contraseña de tener 1 número',
   },
   'eight.characters': {
     id: 'eight.characters',
-    defaultMessage: '8 characters',
-    description: 'password requirement to have a minimum of 8 characters',
+    defaultMessage: '8 caracteres',
+    description: 'requisito de contraseña de tener un mínimo de 8 caracteres',
   },
   'password.sr.only.helping.text': {
     id: 'password.sr.only.helping.text',
-    defaultMessage: 'Password must contain at least 8 characters, at least one letter, and at least one number',
-    description: 'Password helping text for the sr-only class',
+    defaultMessage: 'La contraseña debe contener al menos 8 caracteres, al menos una letra y al menos un número',
+    description: 'Texto de ayuda de contraseña para la clase sr-only',
   },
   // third party auth
   'tpa.alert.heading': {
     id: 'tpa.alert.heading',
-    defaultMessage: 'Almost done!',
-    description: 'Success alert heading after user has successfully signed in with social auth',
+    defaultMessage: '¡Casi listo!',
+    description: 'Encabezado de alerta de éxito después de que el usuario ha iniciado sesión exitosamente con autenticación social',
   },
   'login.third.party.auth.account.not.linked': {
     id: 'login.third.party.auth.account.not.linked',
-    defaultMessage: 'You have successfully signed into {currentProvider}, but your {currentProvider} '
-                    + 'account does not have a linked {platformName} account. To link your accounts, '
-                    + 'sign in now using your {platformName} password.',
-    description: 'Message that appears on login page if user has successfully authenticated with social '
-                  + 'auth but no associated platform account exists',
+    defaultMessage: 'Has iniciado sesión exitosamente en {currentProvider}, pero tu cuenta de {currentProvider} '
+                    + 'no tiene una cuenta de {platformName} vinculada. Para vincular tus cuentas, '
+                    + 'inicia sesión ahora usando tu contraseña de {platformName}.',
+    description: 'Mensaje que aparece en la página de inicio de sesión si el usuario se ha autenticado exitosamente con autenticación social '
+                  + 'pero no existe una cuenta de plataforma asociada',
   },
   'register.third.party.auth.account.not.linked': {
     id: 'register.third.party.auth.account.not.linked',
-    defaultMessage: 'You\'ve successfully signed into {currentProvider}! We just need a little more information '
-                    + 'before you start learning with {platformName}.',
-    description: 'Message that appears on register page if user has successfully authenticated with TPA '
-                  + 'but no associated platform account exists',
+    defaultMessage: '¡Has iniciado sesión exitosamente en {currentProvider}! Solo necesitamos un poco más de información '
+                    + 'antes de que comiences a aprender con {platformName}.',
+    description: 'Mensaje que aparece en la página de registro si el usuario se ha autenticado exitosamente con TPA '
+                  + 'pero no existe una cuenta de plataforma asociada',
   },
   'registration.using.tpa.form.heading': {
     id: 'registration.using.tpa.form.heading',
-    defaultMessage: 'Finish creating your account',
-    description: 'Heading that appears above form when user is trying to create account using social auth',
+    defaultMessage: 'Termina de crear tu cuenta',
+    description: 'Encabezado que aparece sobre el formulario cuando el usuario intenta crear una cuenta usando autenticación social',
   },
   supportTitle: {
     id: 'zendesk.supportTitle',
-    description: 'Title for the support button',
-    defaultMessage: 'edX Support',
+    description: 'Título para el botón de soporte',
+    defaultMessage: 'Soporte de edX',
   },
   selectTicketForm: {
     id: 'zendesk.selectTicketForm',
-    description: 'Select ticket form',
-    defaultMessage: 'Please choose your request type:',
+    description: 'Seleccionar formulario de ticket',
+    defaultMessage: 'Por favor elige tu tipo de solicitud:',
   },
   'registration.other.options.heading': {
     id: 'registration.other.options.heading',
-    defaultMessage: 'Or register with:',
-    description: 'A message that appears above third party auth providers i.e saml, google, facebook etc',
+    defaultMessage: 'O regístrate con:',
+    description: 'Un mensaje que aparece sobre los proveedores de autenticación de terceros, es decir, saml, google, facebook, etc.',
   },
   'institution.login.button': {
     id: 'institution.login.button',
-    defaultMessage: 'Institution/campus credentials',
-    description: 'shows institutions list',
+    defaultMessage: 'Credenciales de institución/campus',
+    description: 'muestra la lista de instituciones',
   },
   'login.other.options.heading': {
     id: 'login.other.options.heading',
-    defaultMessage: 'Or sign in with:',
-    description: 'Text that appears above other sign in options like social auth buttons',
+    defaultMessage: 'O inicia sesión con:',
+    description: 'Texto que aparece sobre otras opciones de inicio de sesión como botones de autenticación social',
   },
   'enterprise.login.btn.text': {
     id: 'enterprise.login.btn.text',
-    defaultMessage: 'Company or school credentials',
-    description: 'Company or school login link text.',
+    defaultMessage: 'Credenciales de empresa o escuela',
+    description: 'Texto del enlace de inicio de sesión de empresa o escuela.',
   },
 });
 

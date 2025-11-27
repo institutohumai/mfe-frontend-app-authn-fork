@@ -30,7 +30,6 @@ $elevation-level-2-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.15);
 .forgot-password-button-width {
   min-width: 6rem;
 }
-
 .spinner--position-centered {
   left: 0;
   right: 0;
@@ -110,7 +109,7 @@ $elevation-level-2-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.15);
   height: 36px;
   color: $primary;
 
-  .btn-tpa__image-icon {
+  .btn-tpa__image-icon{
     background-color: transparent;
     max-height: 24px;
     max-width: 24px;
@@ -294,13 +293,11 @@ select.form-control {
   @extend .x-small;
   filter: drop-shadow($elevation-level-2-shadow) drop-shadow($elevation-level-2-shadow) !important;
   right: 0.2rem !important;
-
   .tooltip-inner {
     background: $white;
     display: block;
     color: $gray-500;
   }
-
   .arrow::before {
     border-left-color: $white;
   }
@@ -321,7 +318,6 @@ select.form-control {
     display: block;
     color: $gray-500;
   }
-
   .arrow::before {
     border-top-color: $white;
   }
@@ -340,7 +336,7 @@ select.form-control {
   color: $gray-700;
 }
 
-.logistration-button:hover {
+.logistration-button:hover{
   color: $gray-700;
   text-decoration: none;
 }
@@ -355,7 +351,6 @@ select.form-control {
 .icon-size {
   width: 2.3rem;
 }
-
 .has-floating-label {
   color: $gray-500;
 }
@@ -369,21 +364,21 @@ select.form-control {
   font-size: 0.75rem;
 }
 
-.form-group__form-field .form-control:focus~.pgn__form-control-floating-label .pgn__form-control-floating-label-content {
-  font-size: 16px;
-  color: $primary-700;
-  background: none !important;
+.form-group__form-field .form-control:focus ~ .pgn__form-control-floating-label .pgn__form-control-floating-label-content {
+    font-size: 16px;
+    color: $primary-700;
+    background: none !important;
 }
 
-.form-group__form-field .form-control:focus~.pgn__form-control-floating-label .pgn__form-control-floating-label-text,
-.form-control.has-value~.pgn__form-control-floating-label .pgn__form-control-floating-label-text {
-  background-color: transparent !important;
-  color: #ffffff80;
-  border-radius: 2px 2px 0 0 !important;
-  transform: translateY(-140%) scale(0.75) !important;
+.form-group__form-field .form-control:focus ~ .pgn__form-control-floating-label .pgn__form-control-floating-label-text, .form-control.has-value ~ .pgn__form-control-floating-label .pgn__form-control-floating-label-text {
+    background-color: transparent !important;
+    color: #ffffff80;
+    border-radius: 2px 2px 0 0 !important;
+    transform: translateY(-140%) scale(0.75) !important;
 }
 
-.form-group__form-field .form-control:not([value='']):not(:focus)~.pgn__form-control-floating-label .pgn__form-control-floating-label-content {
+.form-group__form-field .form-control:not([value='']):not(:focus) ~
+  .pgn__form-control-floating-label .pgn__form-control-floating-label-content {
   font-size: 16px;
 }
 
@@ -433,7 +428,28 @@ select.form-control {
   }
 }
 
+// Smaller than Extra Small (Mobile Screens)
+@media (max-width: 464px) {
+  .btn-social {
+    min-width: 100%;
+    margin-bottom: 0.75rem;
+    margin-right: 0 !important;
+  }
 
+  .welcome-page-content,
+  .main-content {
+    min-width: 100vw !important;
+    padding: 1.5rem !important;
+  }
+
+  #password-requirement-top {
+    display: unset;
+    .tooltip-inner {
+      max-width: inherit;
+      min-width: unset !important;
+    }
+  }
+}
 
 .table-striped tbody tr:nth-of-type(odd) {
   background-color: $light-200;
@@ -458,6 +474,12 @@ select.form-control {
   border: 1px solid #ffffff26;
 }
 
+.logistration-panel .login-actions {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
 .logistration-panel h1 {
   font-family: 'Nunito', sans-serif;
   font-size: 0.875rem;
@@ -465,46 +487,31 @@ select.form-control {
   letter-spacing: 0.3em;
 }
 
-.logistration-panel .login-actions {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-
-  .forgot-password-link {
-    color: #ffffff60 !important;
-    font-size: 0.875rem !important;
-    font-family: 'Nunito', sans-serif !important;
-  }
-}
-
 .logistration-panel .logistration-tabs {
   border-bottom: 0 !important;
   justify-content: center !important;
   margin-top: 2rem;
   display: flex !important;
-
+  
   .nav-item {
     margin-bottom: 0;
     margin-left: 0.5rem;
     margin-right: 0.5rem;
-
+    
     .nav-link {
-      font-family: "Nunito", sans-serif;
       border-radius: 50rem !important;
       border: 1px solid #ffffff26 !important;
       text-transform: uppercase !important;
       color: $white !important;
       background-color: transparent !important;
       opacity: 0.5;
-      padding: 0.75rem 2rem !important;
-      font-weight: 400 !important;
+      padding: 0.5rem 2rem !important;
+      font-weight: 700 !important;
       font-size: 0.875rem !important;
       transition: background-color 0.3s ease, border-color 0.3s ease;
-
+      
       // Remove any default underline or pseudo-elements
-      &::after,
-      &::before {
+      &::after, &::before {
         display: none !important;
       }
 
@@ -514,7 +521,7 @@ select.form-control {
         color: $white !important;
         transition: background-color 0.3s ease, border-color 0.3s ease;
       }
-
+      
       &.active {
         background-color: #f4962d !important;
         border-color: #f4962d !important;
@@ -524,176 +531,92 @@ select.form-control {
       }
     }
   }
-
+  
   // Fallback if nav-item is not used or structure is different
-  >.nav-link {
+  > .nav-link {
     font-family: "Nunito", sans-serif;
-    border-radius: 50rem !important;
-    border: 1px solid #ffffff26 !important;
-    text-transform: uppercase !important;
-    color: $white !important;
-    background-color: transparent !important;
-    opacity: 0.5;
-    padding: 0.5rem 2rem !important;
-    font-weight: 700 !important;
-    font-size: 0.875rem !important;
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
-
-    &::after,
-    &::before {
-      display: none !important;
-      transition: background-color 0.3s ease, border-color 0.3s ease;
-    }
-
-    &:hover {
-      border-color: $white !important;
-      opacity: 0.8;
+      border-radius: 50rem !important;
+      border: 1px solid #ffffff26 !important;
+      text-transform: uppercase !important;
       color: $white !important;
+      background-color: transparent !important;
+      opacity: 0.5;
+      padding: 0.5rem 2rem !important;
+      font-weight: 700 !important;
+      font-size: 0.875rem !important;
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
       transition: background-color 0.3s ease, border-color 0.3s ease;
-    }
+      
+      &::after, &::before {
+        display: none !important;
+        transition: background-color 0.3s ease, border-color 0.3s ease;
+      }
 
-    &.active {
-      background-color: #f4962d !important;
-      border-color: #f4962d !important;
-      opacity: 1;
-      color: $white !important;
-      transition: background-color 0.3s ease, border-color 0.3s ease;
-    }
+      &:hover {
+        border-color: $white !important;
+        opacity: 0.8;
+        color: $white !important;
+        transition: background-color 0.3s ease, border-color 0.3s ease;
+      }
+      
+      &.active {
+        background-color: #f4962d !important;
+        border-color: #f4962d !important;
+        opacity: 1;
+        color: $white !important;
+        transition: background-color 0.3s ease, border-color 0.3s ease;
+      }
   }
 }
 
-.forgot-password-tabs {
-  .nav-link {
-    opacity: 1 !important;
-    line-height: normal !important;
-  }
-}
-
-// Custom Button Styles
-.btn-custom {
+.btn-theme {
   font-family: 'Nunito', sans-serif !important;
   border-radius: 0.75rem !important;
-  font-weight: 700 !important;
-  padding: 0.75rem 1.5rem;
-  transition: all 0.3s ease;
   border: 1px solid transparent !important;
-
-  // Variants
-  &.orange {
+  font-weight: 700 !important;
+  transition: all 0.3s ease !important;
+  
+  &.btn-theme-orange {
     background-color: #f4962d !important;
-    color: #fff !important;
+    color: $white !important;
     border-color: #f4962d !important;
-
-    &:hover,
-    &:focus {
+    
+    &:hover {
       background-color: darken(#f4962d, 10%) !important;
       border-color: darken(#f4962d, 10%) !important;
     }
   }
 
-  &.purple {
+  &.btn-theme-purple {
     background-color: #79168fd0 !important;
-    color: #fff !important;
+    color: $white !important;
     border-color: #79168fd0 !important;
 
-    &:hover,
-    &:focus {
+    &:hover {
       background-color: darken(#79168fd0, 10%) !important;
       border-color: darken(#79168fd0, 10%) !important;
     }
   }
 
-  &.transparent-orange {
+  &.btn-theme-transparent-orange {
     background-color: transparent !important;
     color: #f4962d !important;
     border-color: #f4962d !important;
 
-    &:hover,
-    &:focus {
-      background-color: #f4962d !important;
-      color: #fff !important;
+    &:hover {
+      background-color: rgba(#f4962d, 1) !important;
     }
   }
 
-  &.transparent-purple {
+  &.btn-theme-transparent-purple {
     background-color: transparent !important;
     color: #79168fd0 !important;
     border-color: #79168fd0 !important;
 
-    &:hover,
-    &:focus {
-      background-color: #79168fd0 !important;
-      color: #fff !important;
+    &:hover {
+      background-color: rgba(#79168fd0, 0.1) !important;
     }
   }
 }
 
-// Alert Styles for Login and Registration Errors
-#login-failure-alert,
-#validation-errors {
-  &.alert-danger {
-    background: #C32D3A40 !important;
-    border: 1px solid #C32D3A !important;
-    color: #C32D3A !important;
-
-    .alert-heading {
-      color: $white !important;
-    }
-  }
-}
-// Smaller than Extra Small (Mobile Screens)
-@media (max-width: 464px) {
-  .btn-social {
-    min-width: 100%;
-    margin-bottom: 0.75rem;
-    margin-right: 0 !important;
-  }
-
-  .welcome-page-content,
-  .main-content {
-    min-width: 100% !important;
-    width: 100% !important;
-    padding: 1rem !important;
-  }
-
-  .logistration-panel {
-    padding: 1.5rem;
-    border-radius: 1.5rem;
-    
-    h1 {
-      font-size: 1.25rem;
-    }
-
-    .logistration-tabs {
-      margin-top: 1.5rem;
-      
-      .nav-item {
-        margin-left: 0.25rem;
-        margin-right: 0.25rem;
-        
-        .nav-link {
-          padding: 0.5rem 1rem !important;
-          font-size: 0.75rem !important;
-        }
-      }
-      
-      > .nav-link {
-        padding: 0.5rem 1rem !important;
-        font-size: 0.75rem !important;
-        margin-left: 0.25rem;
-        margin-right: 0.25rem;
-      }
-    }
-  }
-
-  #password-requirement-top {
-    display: unset;
-
-    .tooltip-inner {
-      max-width: inherit;
-      min-width: unset !important;
-    }
-  }
-}

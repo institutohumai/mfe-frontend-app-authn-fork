@@ -150,48 +150,68 @@ const ResetPasswordPage = (props) => {
               {formatMessage(messages['reset.password.page.title'], { siteName: getConfig().SITE_NAME })}
             </title>
           </Helmet>
-          <Tabs activeKey="" id="controlled-tab" onSelect={(key) => navigate(updatePathWithQueryParams(key))}>
-            <Tab title={tabTitle} eventKey={LOGIN_PAGE} />
-          </Tabs>
-          <div id="main-content" className="main-content">
-            <div className="mw-xs">
-              <ResetPasswordFailure errorCode={errorCode} errorMsg={props.errorMsg} />
-              <h4>{formatMessage(messages['reset.password'])}</h4>
-              <p className="mb-4">{formatMessage(messages['reset.password.page.instructions'])}</p>
-              <Form id="set-reset-password-form" name="set-reset-password-form">
-                <PasswordField
-                  name="newPassword"
-                  value={newPassword}
-                  handleChange={(e) => setNewPassword(e.target.value)}
-                  handleBlur={handleOnBlur}
-                  handleFocus={handleOnFocus}
-                  errorMessage={formErrors.newPassword}
-                  floatingLabel={formatMessage(messages['new.password.label'])}
-                />
-                <PasswordField
-                  name="confirmPassword"
-                  value={confirmPassword}
-                  handleChange={handleConfirmPasswordChange}
-                  handleFocus={handleOnFocus}
-                  errorMessage={formErrors.confirmPassword}
-                  showRequirements={false}
-                  floatingLabel={formatMessage(messages['confirm.password.label'])}
-                />
-                <StatefulButton
-                  id="submit-new-password"
-                  name="submit-new-password"
-                  type="submit"
-                  variant="brand"
-                  className="reset-password--button"
-                  state={props.status}
-                  labels={{
-                    default: formatMessage(messages['reset.password']),
-                    pending: '',
-                  }}
-                  onClick={e => handleSubmit(e)}
-                  onMouseDown={(e) => e.preventDefault()}
-                />
-              </Form>
+          <div className="logistration-panel">
+            <img
+              src="/assets/logo.webp"
+              alt="Logo"
+              className="d-block mx-auto mb-4"
+              style={{ width: '180px' }}
+            />
+            <h1 className='font-weight-normal text-uppercase text-center'>Campus</h1>
+            <ul className="nav justify-content-center logistration-tabs forgot-password-tabs">
+              <li className="nav-item">
+                <button
+                  type="button"
+                  className="nav-link"
+                  onClick={() => navigate(updatePathWithQueryParams(LOGIN_PAGE))}
+                >
+                  <div className="d-inline-flex flex-wrap align-items-center">
+                    <Icon src={ChevronLeft} />
+                    <span className="ml-2">{formatMessage(messages['sign.in'])}</span>
+                  </div>
+                </button>
+              </li>
+            </ul>
+            <div id="main-content" className="main-content">
+              <div className="mw-xs mx-auto">
+                <ResetPasswordFailure errorCode={errorCode} errorMsg={props.errorMsg} />
+                <h4 className="text-center">{formatMessage(messages['reset.password'])}</h4>
+                <p className="mb-4 text-center" style={{ opacity: 0.8 }}>{formatMessage(messages['reset.password.page.instructions'])}</p>
+                <Form id="set-reset-password-form" name="set-reset-password-form">
+                  <PasswordField
+                    name="newPassword"
+                    value={newPassword}
+                    handleChange={(e) => setNewPassword(e.target.value)}
+                    handleBlur={handleOnBlur}
+                    handleFocus={handleOnFocus}
+                    errorMessage={formErrors.newPassword}
+                    floatingLabel={formatMessage(messages['new.password.label'])}
+                  />
+                  <PasswordField
+                    name="confirmPassword"
+                    value={confirmPassword}
+                    handleChange={handleConfirmPasswordChange}
+                    handleFocus={handleOnFocus}
+                    errorMessage={formErrors.confirmPassword}
+                    showRequirements={false}
+                    floatingLabel={formatMessage(messages['confirm.password.label'])}
+                  />
+                  <StatefulButton
+                    id="submit-new-password"
+                    name="submit-new-password"
+                    type="submit"
+                    variant="brand"
+                    className="reset-password--button btn-custom transparent-orange w-100"
+                    state={props.status}
+                    labels={{
+                      default: formatMessage(messages['reset.password']),
+                      pending: '',
+                    }}
+                    onClick={e => handleSubmit(e)}
+                    onMouseDown={(e) => e.preventDefault()}
+                  />
+                </Form>
+              </div>
             </div>
           </div>
         </div>

@@ -116,18 +116,41 @@ const Logistration = (props) => {
             </>
           )
           : (
-            <div>
+            <div className="logistration-panel">
+              <img
+                src="/assets/logo.webp"
+                alt="Logo"
+                className="d-block mx-auto mb-4"
+                style={{ width: '180px' }}
+              />
+              <h1 className='font-weight-normal text-uppercase text-center'>Campus</h1>
               {institutionLogin
                 ? (
-                  <Tabs defaultActiveKey="" id="controlled-tab" onSelect={handleInstitutionLogin}>
+                  <Tabs defaultActiveKey="" id="controlled-tab" onSelect={handleInstitutionLogin} className="logistration-tabs">
                     <Tab title={tabTitle} eventKey={selectedPage === LOGIN_PAGE ? LOGIN_PAGE : REGISTER_PAGE} />
                   </Tabs>
                 )
                 : (!isValidTpaHint() && !hideRegistrationLink && (
-                  <Tabs defaultActiveKey={selectedPage} id="controlled-tab" onSelect={(tabKey) => handleOnSelect(tabKey, selectedPage)}>
-                    <Tab title={formatMessage(messages['logistration.register'])} eventKey={REGISTER_PAGE} />
-                    <Tab title={formatMessage(messages['logistration.sign.in'])} eventKey={LOGIN_PAGE} />
-                  </Tabs>
+                  <ul className="nav justify-content-center logistration-tabs">
+                    <li className="nav-item">
+                      <button
+                        type="button"
+                        className={`nav-link ${selectedPage === REGISTER_PAGE ? 'active' : ''}`}
+                        onClick={() => handleOnSelect(REGISTER_PAGE, selectedPage)}
+                      >
+                        {formatMessage(messages['logistration.register'])}
+                      </button>
+                    </li>
+                    <li className="nav-item">
+                      <button
+                        type="button"
+                        className={`nav-link ${selectedPage === LOGIN_PAGE ? 'active' : ''}`}
+                        onClick={() => handleOnSelect(LOGIN_PAGE, selectedPage)}
+                      >
+                        {formatMessage(messages['logistration.sign.in'])}
+                      </button>
+                    </li>
+                  </ul>
                 ))}
               { key && (
                 <Navigate to={updatePathWithQueryParams(key)} replace />
