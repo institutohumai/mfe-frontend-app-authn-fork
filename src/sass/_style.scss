@@ -643,6 +643,22 @@ select.form-control {
     }
   }
 }
+// Animations
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
 // Smaller than Extra Small (Mobile Screens)
 @media (max-width: 464px) {
   .btn-social {

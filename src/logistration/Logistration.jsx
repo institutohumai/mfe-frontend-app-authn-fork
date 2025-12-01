@@ -19,6 +19,7 @@ import { clearThirdPartyAuthContextErrorMessage } from '../common-components/dat
 import {
   tpaProvidersSelector,
 } from '../common-components/data/selectors';
+import { SmoothHeight } from '../common-components';
 import messages from '../common-components/messages';
 import { LOGIN_PAGE, REGISTER_PAGE } from '../data/constants';
 import {
@@ -118,7 +119,7 @@ const Logistration = (props) => {
           : (
             <div className="logistration-panel">
               <img
-                src="/assets/logo.webp"
+                src={`${getConfig().PUBLIC_PATH}assets/logo.webp`}
                 alt="Logo"
                 className="d-block mx-auto mb-4"
                 style={{ width: '180px' }}
@@ -156,19 +157,21 @@ const Logistration = (props) => {
                 <Navigate to={updatePathWithQueryParams(key)} replace />
               )}
               <div id="main-content" className="main-content">
-                {!institutionLogin && !isValidTpaHint() && hideRegistrationLink && (
-                  <h3 className="mb-4.5">
-                    {formatMessage(messages[selectedPage === LOGIN_PAGE ? 'logistration.sign.in' : 'logistration.register'])}
-                  </h3>
-                )}
-                {selectedPage === LOGIN_PAGE
-                  ? <LoginPage institutionLogin={institutionLogin} handleInstitutionLogin={handleInstitutionLogin} />
-                  : (
-                    <RegistrationPage
-                      institutionLogin={institutionLogin}
-                      handleInstitutionLogin={handleInstitutionLogin}
-                    />
+                <SmoothHeight>
+                  {!institutionLogin && !isValidTpaHint() && hideRegistrationLink && (
+                    <h3 className="mb-4.5">
+                      {formatMessage(messages[selectedPage === LOGIN_PAGE ? 'logistration.sign.in' : 'logistration.register'])}
+                    </h3>
                   )}
+                  {selectedPage === LOGIN_PAGE
+                    ? <LoginPage institutionLogin={institutionLogin} handleInstitutionLogin={handleInstitutionLogin} />
+                    : (
+                      <RegistrationPage
+                        institutionLogin={institutionLogin}
+                        handleInstitutionLogin={handleInstitutionLogin}
+                      />
+                    )}
+                </SmoothHeight>
               </div>
             </div>
           )}

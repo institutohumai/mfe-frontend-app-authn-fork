@@ -22,7 +22,7 @@ import { forgotPasswordResultSelector } from './data/selectors';
 import ForgotPasswordAlert from './ForgotPasswordAlert';
 import messages from './messages';
 import BaseContainer from '../base-container';
-import { FormGroup } from '../common-components';
+import { FormGroup, SmoothHeight } from '../common-components';
 import { DEFAULT_STATE, LOGIN_PAGE, VALID_EMAIL_REGEX } from '../data/constants';
 import { updatePathWithQueryParams, windowScrollTo } from '../data/utils';
 
@@ -103,7 +103,7 @@ const ForgotPasswordPage = (props) => {
       </Helmet>
       <div className="logistration-panel">
         <img
-          src="/assets/logo.webp"
+          src={`${getConfig().PUBLIC_PATH}assets/logo.webp`}
           alt="Logo"
           className="d-block mx-auto mb-4"
           style={{ width: '180px' }}
@@ -124,7 +124,8 @@ const ForgotPasswordPage = (props) => {
           </li>
         </ul>
         <div id="main-content" className="main-content">
-          <Form id="forget-password-form" name="forget-password-form" className="mw-xs mx-auto">
+          <SmoothHeight>
+            <Form id="forget-password-form" name="forget-password-form" className="mw-xs mx-auto fade-in">
             <ForgotPasswordAlert email={bannerEmail} emailError={formErrors} status={status} />
             <h2 className="h4 text-center">
               {formatMessage(messages['forgot.password.page.heading'])}
@@ -178,6 +179,7 @@ const ForgotPasswordPage = (props) => {
               </span>
             </p>
           </Form>
+          </SmoothHeight>
         </div>
       </div>
     </BaseContainer>
